@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/catalogueFragment">
+
+    <fragment
+        android:id="@+id/catalogueFragment"
+        android:name="com.example.testsmart.ui.CatalogueFragment"
+        android:label="fragment_catalogue"
+        tools:layout="@layout/fragment_catalogue" >
+        <action
+            android:id="@+id/action_catalogueFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_catalogueFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.testsmart.ui.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="residents"
+            app:argType="string" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument android:name="climate"
+            app:argType="string" />
+        <argument android:name="rotation"
+            app:argType="string" />
+        <argument android:name="terrain"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detailFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.testsmart.ui.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
+</navigation>
